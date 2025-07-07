@@ -1,0 +1,1872 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Nunito', sans-serif;
+    line-height: 1.6;
+    color: #2c3e50;
+    background: linear-gradient(135deg, #3498db 0%, #2ecc71 100%);
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(135deg, #3498db 0%, #2ecc71 50%, #f39c12 100%);
+    padding: 80px 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="stars" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="1" fill="white" opacity="0.3"/></pattern></defs><rect width="100%" height="100%" fill="url(%23stars)"/></svg>');
+    animation: twinkle 3s ease-in-out infinite;
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 2;
+}
+
+.git-text {
+    color: #f39c12;
+    animation: bounce 2s ease-in-out infinite;
+}
+
+.and-text {
+    color: white;
+    font-size: 2rem;
+    margin: 0 10px;
+}
+
+.github-text {
+    color: #ecf0f1;
+    animation: bounce 2s ease-in-out infinite 0.5s;
+}
+
+.adventure-text {
+    color: white;
+    display: block;
+    margin-top: 10px;
+    font-size: 2rem;
+    animation: slideInUp 1s ease-out;
+}
+
+.hero-subtitle {
+    font-size: 1.5rem;
+    color: white;
+    margin-bottom: 40px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    position: relative;
+    z-index: 2;
+}
+
+.hero-character {
+    position: relative;
+    z-index: 2;
+}
+
+.cat-coder {
+    font-size: 4rem;
+    animation: float 3s ease-in-out infinite;
+    display: inline-block;
+}
+
+/* Navigation */
+.nav-bar {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 20px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+}
+
+.nav-list {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #2c3e50;
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 12px 20px;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    position: relative;
+    background: rgba(236, 240, 241, 0.8);
+    border: 2px solid transparent;
+    backdrop-filter: blur(5px);
+}
+
+.nav-link:hover {
+    background: #3498db;
+    color: white;
+    transform: translateY(-2px);
+    border-color: #2980b9;
+    box-shadow: 0 8px 25px rgba(52, 152, 219, 0.3);
+}
+
+/* Sections */
+.section {
+    padding: 80px 0;
+    background: white;
+    margin: 40px 0;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.section:nth-child(even) {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+}
+
+/* Treasure Grid Layout */
+.treasure-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    margin: 60px 0;
+}
+
+.treasure-card {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 8px 32px rgba(52, 152, 219, 0.1);
+    border: 2px solid rgba(52, 152, 219, 0.1);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.treasure-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 45px rgba(52, 152, 219, 0.2);
+    border-color: #3498db;
+}
+
+.hero-card {
+    grid-column: span 2;
+    background: linear-gradient(135deg, #3498db 0%, #2ecc71 100%);
+    color: white;
+}
+
+.hero-card .card-description {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.hero-card .stat-number {
+    color: #f39c12;
+}
+
+.team-card {
+    background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);
+    color: white;
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.treasure-number {
+    font-size: 1.2rem;
+    font-weight: 700;
+    opacity: 0.8;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 8px 15px;
+    border-radius: 15px;
+}
+
+.treasure-icon {
+    font-size: 2.5rem;
+}
+
+.card-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: #2c3e50;
+}
+
+.hero-card .card-title,
+.team-card .card-title {
+    color: white;
+}
+
+.card-description {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #34495e;
+    margin-bottom: 20px;
+}
+
+.highlight-stat {
+    margin-top: auto;
+    padding-top: 20px;
+}
+
+.stat-number {
+    display: block;
+    font-size: 3rem;
+    font-weight: 800;
+    color: #f39c12;
+    line-height: 1;
+    margin-bottom: 5px;
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: 500;
+}
+
+.treasure-card h3 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 10px;
+    margin-top: 15px;
+}
+
+.treasure-card p {
+    font-size: 1rem;
+    color: #7f8c8d;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.team-card h3,
+.team-card p {
+    color: white;
+}
+
+.example-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.example-item {
+    background: rgba(52, 152, 219, 0.1);
+    padding: 8px 12px;
+    border-radius: 12px;
+    font-size: 0.9rem;
+    color: #2c3e50;
+    border-left: 3px solid #3498db;
+}
+
+.team-benefits {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.benefit {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 8px 12px;
+    border-radius: 12px;
+    font-size: 0.9rem;
+    color: white;
+}
+
+.small-card .card-icon {
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+.small-card h4 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.small-card p {
+    font-size: 0.9rem;
+    color: #666;
+    line-height: 1.4;
+}
+
+.step-list {
+    margin-top: 20px;
+}
+
+.step-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.step-number {
+    width: 30px;
+    height: 30px;
+    background: linear-gradient(135deg, #ff6b6b, #feca57);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.step-text {
+    font-size: 1rem;
+    color: #333;
+    font-weight: 500;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 60px;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, #ff6b6b, #feca57);
+    border-radius: 2px;
+}
+
+/* Analogy Cards */
+.analogy-card {
+    background: white;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin: 40px 0;
+    transition: transform 0.3s ease;
+}
+
+.analogy-card:hover {
+    transform: translateY(-5px);
+}
+
+.analogy-icon {
+    font-size: 4rem;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+.analogy-content h3 {
+    color: #6c5ce7;
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+
+.analogy-content p {
+    font-size: 1.2rem;
+    color: #666;
+    line-height: 1.8;
+}
+
+/* Interactive Demos */
+.interactive-demo {
+    margin-top: 30px;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.diary-page {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px 0;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    border-left: 5px solid #ff6b6b;
+    transition: all 0.3s ease;
+}
+
+.diary-page:hover {
+    transform: scale(1.05);
+}
+
+.page-content {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.page-date {
+    font-size: 0.9rem;
+    color: #666;
+    font-style: italic;
+}
+
+/* Download Steps Section */
+.download-hero {
+    text-align: center;
+    background: linear-gradient(135deg, #3498db 0%, #2ecc71 100%);
+    border-radius: 20px;
+    padding: 40px;
+    color: white;
+    margin: 40px 0;
+}
+
+.magic-wand {
+    font-size: 4rem;
+    animation: float 2s ease-in-out infinite;
+    margin-bottom: 20px;
+}
+
+.download-hero h3 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.download-hero p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+.download-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+    margin: 60px 0;
+}
+
+.step-card {
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 8px 30px rgba(52, 152, 219, 0.1);
+    border: 2px solid rgba(52, 152, 219, 0.1);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.step-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(52, 152, 219, 0.2);
+    border-color: #3498db;
+}
+
+.step-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.step-number {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #3498db, #2ecc71);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.step-icon {
+    font-size: 2rem;
+}
+
+.step-card h3 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+.step-card p {
+    color: #7f8c8d;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.step-visual {
+    margin-top: 20px;
+}
+
+/* GitHub Search Visual */
+.github-search {
+    background: #f8f9fa;
+    border-radius: 15px;
+    padding: 20px;
+    border: 1px solid #e9ecef;
+}
+
+.search-bar {
+    background: white;
+    border-radius: 25px;
+    padding: 12px 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+    border: 2px solid #3498db;
+}
+
+.search-icon {
+    font-size: 1.2rem;
+}
+
+.search-text {
+    color: #7f8c8d;
+    font-style: italic;
+}
+
+.search-results {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.search-result {
+    background: white;
+    padding: 10px 15px;
+    border-radius: 10px;
+    border-left: 3px solid #3498db;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.search-result:hover {
+    transform: translateX(5px);
+    background: #ecf8ff;
+}
+
+/* GitHub Repo View */
+.github-repo-view {
+    background: #f8f9fa;
+    border-radius: 15px;
+    padding: 20px;
+    border: 1px solid #e9ecef;
+}
+
+.repo-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.repo-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+.code-button {
+    background: #2ecc71;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.code-button:hover {
+    background: #27ae60;
+    transform: scale(1.05);
+}
+
+.clone-url-box {
+    background: white;
+    border-radius: 10px;
+    padding: 15px;
+    border: 1px solid #bdc3c7;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.url-display {
+    font-family: 'Courier New', monospace;
+    color: #2c3e50;
+    font-size: 0.9rem;
+}
+
+.copy-btn {
+    background: #3498db;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    cursor: pointer;
+}
+
+/* Terminal Demo */
+.terminal-demo {
+    margin-top: 20px;
+}
+
+.terminal-window {
+    background: #2c3e50;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+}
+
+.terminal-header {
+    background: #34495e;
+    padding: 12px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.terminal-title {
+    color: white;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.terminal-buttons {
+    display: flex;
+    gap: 6px;
+}
+
+.btn {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.btn.red { background: #e74c3c; }
+.btn.yellow { background: #f39c12; }
+.btn.green { background: #2ecc71; }
+
+.terminal-content {
+    padding: 20px;
+    font-family: 'Courier New', monospace;
+}
+
+.command-line {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.prompt {
+    color: #3498db;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+.command {
+    color: #ecf0f1;
+}
+
+.output-line {
+    color: #2ecc71;
+    margin-bottom: 5px;
+    font-size: 0.9rem;
+}
+
+/* Magic Result Section */
+.magic-result {
+    text-align: center;
+    background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);
+    border-radius: 20px;
+    padding: 40px;
+    color: white;
+    margin-top: 40px;
+}
+
+.result-icon {
+    font-size: 4rem;
+    margin-bottom: 20px;
+}
+
+.magic-result h3 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.magic-result p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+    margin-bottom: 30px;
+}
+
+.result-benefits {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.benefit-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.benefit-icon {
+    font-size: 2rem;
+}
+
+.benefit-text {
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+/* Concept Demos */
+.concept-demo {
+    margin-top: 30px;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 15px;
+}
+
+.castle {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.toy {
+    font-size: 2rem;
+    padding: 10px;
+    border-radius: 10px;
+    background: white;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.toy:hover {
+    transform: scale(1.1);
+}
+
+.toy.selected {
+    background: #ff6b6b;
+    color: white;
+    transform: scale(1.2);
+}
+
+.photo-album {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.photo {
+    background: white;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.tree {
+    position: relative;
+    height: 150px;
+    margin: 20px 0;
+}
+
+.trunk {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 60px;
+    background: #8B4513;
+    border-radius: 10px;
+}
+
+.branch {
+    position: absolute;
+    padding: 10px 15px;
+    background: #48dbfb;
+    color: white;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.main-branch {
+    top: 30px;
+    left: 40%;
+}
+
+.feature-branch {
+    top: 30px;
+    right: 35%;
+    background: #feca57;
+    opacity: 0;
+    animation: fadeIn 0.5s ease-in-out forwards;
+}
+
+/* Projects Showcase Section */
+.projects-showcase {
+    margin: 60px 0;
+}
+
+.showcase-intro {
+    text-align: center;
+    background: linear-gradient(135deg, #3498db 0%, #2ecc71 100%);
+    border-radius: 20px;
+    padding: 40px;
+    color: white;
+    margin-bottom: 50px;
+}
+
+.intro-icon {
+    font-size: 4rem;
+    margin-bottom: 20px;
+}
+
+.showcase-intro h3 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.showcase-intro p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+.project-categories {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+    margin: 50px 0;
+}
+
+.category-card {
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 8px 30px rgba(52, 152, 219, 0.1);
+    border: 2px solid rgba(52, 152, 219, 0.1);
+    transition: all 0.3s ease;
+}
+
+.category-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(52, 152, 219, 0.2);
+    border-color: #3498db;
+}
+
+.category-card.games {
+    border-left: 5px solid #e74c3c;
+}
+
+.category-card.learning {
+    border-left: 5px solid #f39c12;
+}
+
+.category-card.creative {
+    border-left: 5px solid #9b59b6;
+}
+
+.category-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.category-icon {
+    font-size: 2.5rem;
+}
+
+.category-header h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+.project-samples {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.project-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.project-item:hover {
+    background: #ecf8ff;
+    transform: translateX(5px);
+}
+
+.project-emoji {
+    font-size: 2rem;
+    min-width: 40px;
+}
+
+.project-info {
+    flex-grow: 1;
+}
+
+.project-info h4 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 5px;
+}
+
+.project-info p {
+    font-size: 0.9rem;
+    color: #7f8c8d;
+    line-height: 1.4;
+}
+
+.download-count {
+    font-size: 0.9rem;
+    color: #f39c12;
+    font-weight: 600;
+}
+
+.download-hint {
+    text-align: center;
+    background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);
+    border-radius: 20px;
+    padding: 30px;
+    color: white;
+    margin-top: 50px;
+}
+
+.hint-icon {
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+
+.download-hint h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.download-hint p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+.download-hint code {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-family: 'Courier New', monospace;
+    font-weight: 600;
+}
+
+/* GitHub Section */
+.github-hero {
+    background: linear-gradient(135deg, #3498db 0%, #2ecc71 100%);
+    border-radius: 20px;
+    padding: 40px;
+    color: white;
+    text-align: center;
+    margin: 40px 0;
+}
+
+.github-hero-content h3 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.github-hero-content p {
+    font-size: 1.3rem;
+    margin-bottom: 30px;
+    opacity: 0.9;
+}
+
+.hero-number {
+    font-size: 4rem;
+    margin-bottom: 20px;
+}
+
+.github-stats {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    margin-top: 30px;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-big {
+    display: block;
+    font-size: 3rem;
+    font-weight: 800;
+    color: #feca57;
+    line-height: 1;
+}
+
+.stat-small {
+    font-size: 1rem;
+    opacity: 0.8;
+    margin-top: 5px;
+}
+
+.clone-demo {
+    margin: 60px 0;
+}
+
+.clone-demo h3 {
+    text-align: center;
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 40px;
+}
+
+.clone-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    margin-top: 40px;
+}
+
+.clone-step {
+    text-align: center;
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.clone-step:hover {
+    transform: translateY(-5px);
+}
+
+.step-visual {
+    margin-bottom: 20px;
+}
+
+.github-repo {
+    background: #f8f9fa;
+    border-radius: 15px;
+    padding: 20px;
+    border: 2px solid #e9ecef;
+}
+
+.repo-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.repo-name {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #333;
+}
+
+.clone-btn {
+    background: #48dbfb;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.clone-btn:hover {
+    background: #39c0db;
+    transform: scale(1.05);
+}
+
+.repo-url {
+    font-family: 'Courier New', monospace;
+    background: #333;
+    color: #feca57;
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+}
+
+.terminal {
+    background: #1e1e1e;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.terminal-header {
+    background: #333;
+    color: white;
+    padding: 10px 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.terminal-body {
+    padding: 20px;
+}
+
+.terminal-line {
+    font-family: 'Courier New', monospace;
+    color: #00ff00;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+.terminal-line:first-child {
+    color: #feca57;
+}
+
+.folder {
+    background: #f8f9fa;
+    border-radius: 15px;
+    padding: 20px;
+    border: 2px solid #e9ecef;
+}
+
+.folder-icon {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.folder-name {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.folder-files {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.file {
+    background: white;
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    color: #666;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.clone-step p {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #333;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.feature-card {
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+}
+
+.primary-feature {
+    background: linear-gradient(135deg, #ff6b6b 0%, #feca57 100%);
+    color: white;
+}
+
+.primary-feature .feature-icon {
+    color: white;
+}
+
+.primary-feature h4 {
+    color: white !important;
+}
+
+.primary-feature p {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.feature-icon {
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+
+.feature-card h4 {
+    color: #6c5ce7;
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+}
+
+/* Practice Section */
+.practice-intro {
+    text-align: center;
+    background: linear-gradient(135deg, #3498db 0%, #2ecc71 100%);
+    border-radius: 20px;
+    padding: 40px;
+    color: white;
+    margin-bottom: 50px;
+}
+
+.practice-intro .intro-icon {
+    font-size: 4rem;
+    margin-bottom: 20px;
+}
+
+.practice-intro h3 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.practice-intro p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+.practice-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    margin: 50px 0;
+}
+
+.practice-step {
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 8px 30px rgba(52, 152, 219, 0.1);
+    border: 2px solid rgba(52, 152, 219, 0.1);
+    transition: all 0.3s ease;
+}
+
+.practice-step:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(52, 152, 219, 0.2);
+    border-color: #3498db;
+}
+
+.step-header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.practice-step .step-number {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #3498db, #2ecc71);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    font-weight: 700;
+    box-shadow: 0 8px 20px rgba(52, 152, 219, 0.3);
+}
+
+.practice-step .step-icon {
+    font-size: 2.5rem;
+}
+
+.step-header h3 {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: #2c3e50;
+    margin: 0;
+}
+
+.practice-step p {
+    color: #7f8c8d;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+.command-demo {
+    margin: 25px 0;
+}
+
+.terminal-window .copy-command {
+    background: #3498db;
+    color: white;
+    border: none;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    margin-left: 10px;
+    transition: all 0.3s ease;
+}
+
+.copy-command:hover {
+    background: #2980b9;
+    transform: scale(1.05);
+}
+
+.readme-importance {
+    background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);
+    border-radius: 15px;
+    padding: 25px;
+    color: white;
+    margin: 25px 0;
+}
+
+.readme-importance .importance-icon {
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+
+.importance-content h4 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.importance-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.importance-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.item-icon {
+    font-size: 1.2rem;
+}
+
+.item-text {
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.info-box {
+    background: rgba(52, 152, 219, 0.1);
+    border-left: 4px solid #3498db;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 25px 0;
+}
+
+.info-box .info-icon {
+    font-size: 1.5rem;
+    color: #3498db;
+    margin-right: 10px;
+}
+
+.info-content {
+    color: #2c3e50;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.practice-summary {
+    text-align: center;
+    background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);
+    border-radius: 20px;
+    padding: 40px;
+    color: white;
+    margin-top: 50px;
+}
+
+.summary-icon {
+    font-size: 4rem;
+    margin-bottom: 20px;
+}
+
+.practice-summary h3 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 30px;
+}
+
+.summary-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin: 30px 0;
+}
+
+.summary-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 20px;
+}
+
+.summary-number {
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+.summary-text {
+    font-size: 1rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+.practice-summary p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+    margin-top: 20px;
+}
+
+/* Buttons */
+.demo-btn, .game-btn {
+    background: linear-gradient(135deg, #ff6b6b 0%, #feca57 100%);
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.demo-btn:hover, .game-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+.demo-btn:active, .game-btn:active {
+    transform: translateY(0);
+}
+
+/* Quiz Section */
+.quiz-container {
+    background: white;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.quiz-question h3 {
+    color: #6c5ce7;
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+}
+
+.quiz-options {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 30px 0;
+}
+
+.quiz-option {
+    background: #f8f9fa;
+    border: 3px solid transparent;
+    padding: 20px 30px;
+    font-size: 1.2rem;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-width: 150px;
+}
+
+.quiz-option:hover {
+    background: #e9ecef;
+    transform: translateY(-2px);
+}
+
+.quiz-option.correct {
+    background: #48dbfb;
+    color: white;
+    border-color: #48dbfb;
+}
+
+.quiz-option.wrong {
+    background: #ff6b6b;
+    color: white;
+    border-color: #ff6b6b;
+}
+
+.quiz-result {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 30px 0;
+    min-height: 50px;
+}
+
+.quiz-score {
+    font-size: 1.3rem;
+    color: #6c5ce7;
+    font-weight: 600;
+}
+
+/* Footer */
+.footer {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 40px 0;
+    text-align: center;
+    margin-top: 60px;
+}
+
+.footer p {
+    font-size: 1.2rem;
+    margin: 10px 0;
+}
+
+/* Animations */
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes slideInUp {
+    from {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes twinkle {
+    0%, 100% {
+        opacity: 0.3;
+    }
+    50% {
+        opacity: 0.8;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .nav-list {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .analogy-card {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .concepts-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .workflow-steps {
+        grid-template-columns: 1fr;
+    }
+    
+    .quiz-options {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .bookshelf {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .github-analogy {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    /* Treasure Grid Responsive */
+    .treasure-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .hero-card {
+        grid-column: span 1;
+    }
+    
+    .treasure-card {
+        padding: 20px;
+    }
+    
+    .card-title {
+        font-size: 1.3rem;
+    }
+    
+    .stat-number {
+        font-size: 2.5rem;
+    }
+    
+    /* Download Steps Responsive */
+    .download-steps {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .step-card {
+        padding: 20px;
+    }
+    
+    .download-hero h3,
+    .magic-result h3 {
+        font-size: 1.8rem;
+    }
+    
+    .result-benefits {
+        gap: 20px;
+    }
+    
+    /* Projects Showcase Responsive */
+    .project-categories {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .showcase-intro h3 {
+        font-size: 1.8rem;
+    }
+    
+    .project-item {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+    
+    .project-emoji {
+        font-size: 1.5rem;
+    }
+    
+    /* Practice Section Responsive */
+    .practice-intro h3 {
+        font-size: 1.8rem;
+    }
+    
+    .practice-steps {
+        gap: 25px;
+    }
+    
+    .practice-step {
+        padding: 20px;
+    }
+    
+    .step-header {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+    
+    .practice-step .step-number {
+        width: 50px;
+        height: 50px;
+        font-size: 1.5rem;
+    }
+    
+    .step-header h3 {
+        font-size: 1.4rem;
+    }
+    
+    .practice-step p {
+        font-size: 1rem;
+    }
+    
+    .command-line {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .copy-command {
+        align-self: center;
+        margin-left: 0 !important;
+    }
+    
+    .importance-list {
+        gap: 8px;
+    }
+    
+    .importance-item {
+        flex-direction: column;
+        text-align: center;
+        gap: 8px;
+    }
+    
+    .readme-importance {
+        padding: 20px;
+    }
+    
+    .importance-content h4 {
+        font-size: 1.2rem;
+    }
+    
+    .summary-steps {
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+    }
+    
+    .practice-summary h3 {
+        font-size: 1.8rem;
+    }
+    
+    .summary-step {
+        padding: 15px;
+    }
+}
+
+@media (max-width: 1024px) and (min-width: 769px) {
+    .treasure-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .hero-card {
+        grid-column: span 2;
+    }
+    
+    .download-steps {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .project-categories {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* Focus styles for keyboard navigation */
+.nav-link:focus,
+.demo-btn:focus,
+.game-btn:focus,
+.quiz-option:focus,
+.toy:focus,
+.book:focus {
+    outline: 3px solid #ff6b6b;
+    outline-offset: 2px;
+}
