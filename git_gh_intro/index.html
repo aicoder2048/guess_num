@@ -27,7 +27,8 @@
         <div class="container">
             <ul class="nav-list">
                 <li><a href="#resource-treasure" class="nav-link">项目宝库</a></li>
-                <li><a href="#how-to-download" class="nav-link">如何下载</a></li>
+                <li><a href="#clone-repo" class="nav-link">克隆项目仓库</a></li>
+                <li><a href="#pull-repo" class="nav-link">更新项目仓库</a></li>
                 <li><a href="#cool-projects" class="nav-link">精彩项目</a></li>
                 <li><a href="#practice" class="nav-link">动手试试</a></li>
                 <li><a href="#quiz" class="nav-link">小测验</a></li>
@@ -113,9 +114,9 @@
             </div>
         </section>
 
-        <section id="how-to-download" class="section">
+        <section id="clone-repo" class="section">
             <div class="container">
-                <h2 class="section-title">三步下载神奇项目</h2>
+                <h2 class="section-title">克隆项目仓库</h2>
                 
                 <div class="download-hero">
                     <div class="magic-wand">🪄</div>
@@ -217,6 +218,78 @@
                             <span class="benefit-text">创造自己的版本</span>
                         </div>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="pull-repo" class="section">
+            <div class="container">
+                <h2 class="section-title">更新项目仓库</h2>
+                <div class="update-hero">
+                    <div class="magic-wand">🔄</div>
+                    <h3>用 <code>git pull</code> 命令一键更新项目</h3>
+                    <p>项目有新内容？只需一条命令，就能让你的本地项目和远程仓库保持同步！</p>
+                </div>
+                <div class="update-steps">
+                    <div class="step-card">
+                        <div class="step-header">
+                            <div class="step-number">1</div>
+                            <div class="step-icon">📂</div>
+                        </div>
+                        <h3>进入项目文件夹</h3>
+                        <p>在终端输入 <code>cd 项目文件夹名</code>，进入你要更新的项目目录。</p>
+                        <div class="command-demo">
+                            <div class="terminal-window">
+                                <div class="terminal-header">
+                                    <span class="terminal-title">🖥️ 终端</span>
+                                </div>
+                                <div class="terminal-content">
+                                    <div class="command-line">
+                                        <span class="prompt">$</span>
+                                        <span class="command">cd 项目文件夹名</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-header">
+                            <div class="step-number">2</div>
+                            <div class="step-icon">🔄</div>
+                        </div>
+                        <h3>更新项目</h3>
+                        <p>输入 <code>git pull</code>，就能把最新的项目内容下载到你的电脑！</p>
+                        <div class="command-demo">
+                            <div class="terminal-window">
+                                <div class="terminal-header">
+                                    <span class="terminal-title">🖥️ 终端</span>
+                                </div>
+                                <div class="terminal-content">
+                                    <div class="command-line">
+                                        <span class="prompt">$</span>
+                                        <span class="command">git pull</span>
+                                    </div>
+                                    <div class="output-line">正在更新项目...</div>
+                                    <div class="output-line">✅ 更新完成！</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="info-box">
+                            <div class="info-icon">💡</div>
+                            <div class="info-content">
+                                <strong>完整语法：</strong> <code>git pull &lt;remote&gt; &lt;branch&gt;</code><br>
+                                <span style="color:#888;font-size:0.98em;">
+                                    <code>git pull origin main</code> - 从origin远程仓库的main分支拉取<br>
+                                    <code>git pull origin master</code> - 从origin远程仓库的master分支拉取
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="magic-result">
+                    <div class="result-icon">🎉</div>
+                    <h3>恭喜！你的项目已经是最新的啦！</h3>
+                    <p>记得经常用 <code>git pull</code> 保持项目同步哦！</p>
                 </div>
             </div>
         </section>
@@ -487,6 +560,30 @@
                             </div>
                         </div>
                     </div>
+                    <div class="practice-step step-5">
+                        <div class="step-header">
+                            <div class="step-number">5</div>
+                            <div class="step-icon">🔄</div>
+                            <h3>更新项目仓库</h3>
+                        </div>
+                        <p>项目有新内容？用 <code>git pull</code> 命令一键同步最新代码！</p>
+                        <div class="command-demo">
+                            <div class="terminal-window">
+                                <div class="terminal-header">
+                                    <span class="terminal-title">🖥️ 更新项目</span>
+                                </div>
+                                <div class="terminal-content">
+                                    <div class="command-line">
+                                        <span class="prompt">$</span>
+                                        <span class="command">git pull</span>
+                                        <button class="copy-command" onclick="copyCommand('git pull')">复制</button>
+                                    </div>
+                                    <div class="output-line">🔄 正在更新项目...</div>
+                                    <div class="output-line">✅ 更新完成！</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 
                 <div class="practice-summary">
@@ -508,6 +605,10 @@
                         <div class="summary-step">
                             <span class="summary-number">4</span>
                             <span class="summary-text">uv run 运行项目</span>
+                        </div>
+                        <div class="summary-step">
+                            <span class="summary-number">5</span>
+                            <span class="summary-text">git pull 更新项目</span>
                         </div>
                     </div>
                     <p>现在你可以用同样的方法去探索更多有趣的GitHub项目了！</p>
